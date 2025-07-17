@@ -8,6 +8,7 @@
 @theme inline {
   --color-primary: #397397;
   --color-secondary: #073e4b;
+  --color-text: #0c6a80;
   --font-bali: var(--font-bali);
 }
 
