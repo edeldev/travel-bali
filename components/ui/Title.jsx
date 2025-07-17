@@ -1,3 +1,5 @@
-export const Title = ({ label, color }) => {
-  return <h2 className={`text-5xl font-semibold ${color}`}>{label}</h2>;
+export const Title = ({ label, color, className }) => {
+  return (
+    <h2 className={`text-5xl font-semibold ${color} ${className}`}>{label}</h2>
+  );
 };

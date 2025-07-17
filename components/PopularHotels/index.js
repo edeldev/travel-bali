@@ -1,0 +1,1 @@
+export { PopularHotels } from "./PopularHotels";

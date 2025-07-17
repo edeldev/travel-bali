@@ -1,7 +1,13 @@
 "use client";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { About, HeroFooter, HeroTitle } from "@/components";
+import {
+  About,
+  Container,
+  HeroFooter,
+  HeroTitle,
+  PopularHotels,
+} from "@/components";
 import { Header } from "@/layout";
 import { gallery } from "@/libs";
 
@@ -35,7 +41,12 @@ export default function Home() {
         </div>
       </div>
 
-      <About />
+      <div className="bg-white">
+        <Container className="bg-secondary rounded-b-4xl md:rounded-b-[100px]">
+          <About />
+          <PopularHotels />
+        </Container>
+      </div>
     </>
   );
 }
