@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   About,
   Container,
+  ExclusiveTour,
   HeroFooter,
   HeroTitle,
   PopularHotels,
@@ -47,6 +48,8 @@ export default function Home() {
           <PopularHotels />
         </Container>
       </div>
+
+      <ExclusiveTour />
     </>
   );
 }
