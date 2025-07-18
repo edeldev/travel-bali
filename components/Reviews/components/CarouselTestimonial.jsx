@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   IconBrandFacebook,
@@ -8,8 +9,7 @@ import {
   IconChevronLeft,
   IconChevronRight,
 } from "@tabler/icons-react";
-import { carouselTestimonial } from "@/libs/carouselTestimonial";
-import Link from "next/link";
+import { carouselTestimonial } from "@/libs";
 
 export const CarouselTestimonial = () => {
   const [index, setIndex] = useState(0);

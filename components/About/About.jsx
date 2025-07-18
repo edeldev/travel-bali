@@ -2,7 +2,10 @@ import { Title } from "../ui";
 
 export const About = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 place-content-center gap-10">
+    <div
+      id="about"
+      className="grid grid-cols-1 md:grid-cols-2 place-content-center gap-10 scroll-mt-30"
+    >
       <div>
         <img src="/about-section.webp" className="object-cover rounded-2xl" />
       </div>
