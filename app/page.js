@@ -8,6 +8,7 @@ import {
   HeroFooter,
   HeroTitle,
   PopularHotels,
+  Reviews,
 } from "@/components";
 import { Header } from "@/layout";
 import { gallery } from "@/libs";
@@ -50,6 +51,8 @@ export default function Home() {
       </div>
 
       <ExclusiveTour />
+
+      <Reviews />
     </>
   );
 }

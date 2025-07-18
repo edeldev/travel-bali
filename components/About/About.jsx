@@ -8,7 +8,7 @@ export const About = () => {
       </div>
       <div className="space-y-5">
         <Title label="Sobre nosotros" color="text-text" />
-        <div className="md:max-w-xl ml-auto">
+        <div>
           <p className="text-white text-justify">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
