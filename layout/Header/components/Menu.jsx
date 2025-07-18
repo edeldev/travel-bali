@@ -14,7 +14,7 @@ export const Menu = ({ open, setOpen }) => {
           animate={{ height: "auto" }}
           exit={{ height: 0 }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
-          className="absolute bg-white w-full shadow-md z-10 xl:hidden rounded-2xl overflow-hidden"
+          className="absolute bg-white w-full shadow-md z-99 xl:hidden rounded-2xl overflow-hidden"
         >
           <ul className="flex flex-col items-center gap-4 p-5">
             {navLinks.map(({ id, href, label }) => (

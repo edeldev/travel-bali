@@ -1,22 +1,25 @@
 "use client";
-
 import { useState } from "react";
 import Link from "next/link";
+import { motion, useScroll } from "framer-motion";
 import { navLinks } from "@/libs";
 import { IconMenu, IconX } from "@tabler/icons-react";
+import { useTransform } from "framer-motion";
 import { Menu } from "./components";
 
 export const Header = () => {
   const [open, setOpen] = useState(false);
+  const { scrollY } = useScroll();
+  const opacity = useTransform(scrollY, [0, 100], [1, 0]);
 
   return (
-    <header className="fixed w-full top-0 z-20">
+    <motion.header className="fixed w-full top-0 z-20">
       <div className="py-5 xl:py-0 px-5 xl:px-20 flex justify-between items-center">
-        <div className="flex-1">
+        <motion.div className="flex-1" style={{ opacity }}>
           <Link href="/" className="text-white font-bold text-3xl">
             Logo
           </Link>
-        </div>
+        </motion.div>
 
         <div className="xl:hidden" onClick={() => setOpen(!open)}>
           {open ? (
@@ -41,22 +44,25 @@ export const Header = () => {
           </ul>
         </nav>
 
-        <div className="flex-1 hidden xl:flex justify-end">
+        <motion.div
+          className="flex-1 hidden xl:flex justify-end"
+          style={{ opacity }}
+        >
           <div className="flex items-center bg-white rounded-full pr-1 group cursor-pointer">
-            <div className="px-5 py-3 bg-primary hover:bg-primary/90 transition duration-300 rounded-full border border-white">
+            <motion.div className="px-5 py-3 bg-primary hover:bg-primary/90 transition duration-300 rounded-full border border-white">
               <Link href="#contacto" className="text-white">
                 Ponte en contacto
               </Link>
-            </div>
+            </motion.div>
 
             <span className="ml-1 text-primary transition-transform duration-300 group-hover:rotate-180">
               &gt;
             </span>
           </div>
-        </div>
+        </motion.div>
       </div>
 
       <Menu open={open} setOpen={setOpen} />
-    </header>
+    </motion.header>
   );
 };

@@ -45,7 +45,7 @@ export const CarouselTestimonial = () => {
 
   return (
     <>
-      <div className="relative overflow-hidden h-[300px] max-w-7xl mx-auto">
+      <div className="relative overflow-hidden h-[300px] max-w-7xl mx-auto z-1">
         <div className="flex justify-center relative w-full h-full">
           <AnimatePresence initial={false}>
             {visibleItems.map((item) => (
