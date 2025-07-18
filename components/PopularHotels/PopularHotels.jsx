@@ -1,10 +1,10 @@
-import { popularHotel } from "@/libs/popularHotel";
-import { Title } from "../ui";
 import Link from "next/link";
+import { popularHotel } from "@/libs";
+import { Title } from "../ui";
 
 export const PopularHotels = () => {
   return (
-    <div className="mt-20">
+    <div id="popular-hotels" className="mt-20 scroll-mt-30">
       <Title
         label="Hoteles populares"
         color="text-text"

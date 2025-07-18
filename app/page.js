@@ -10,7 +10,7 @@ import {
   PopularHotels,
   Reviews,
 } from "@/components";
-import { Header } from "@/layout";
+import { Footer, Header } from "@/layout";
 import { gallery } from "@/libs";
 
 export default function Home() {
@@ -53,6 +53,8 @@ export default function Home() {
       <ExclusiveTour />
 
       <Reviews />
+
+      <Footer />
     </>
   );
 }
