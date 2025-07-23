@@ -1,6 +1,22 @@
+"use client";
 import Link from "next/link";
 import { popularHotel } from "@/libs";
 import { Title } from "../ui";
+import { motion } from "framer-motion";
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 50, scale: 0.9 },
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.6,
+      delay: i * 0.2,
+      ease: "easeOut",
+    },
+  }),
+};
 
 export const PopularHotels = () => {
   return (
@@ -17,15 +33,20 @@ export const PopularHotels = () => {
             const isMiddle = index === 1;
 
             return (
-              <div
+              <motion.div
                 key={hotel.id}
+                custom={index}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                variants={cardVariants}
                 className={`
-        w-full md:w-[300px]
-        h-[350px] 
-        md:h-[400px]
-        ${isMiddle ? "lg:h-[480px]" : "lg:h-[400px]"}
-        overflow-hidden rounded-4xl relative
-      `}
+                  w-full md:w-[300px]
+                  h-[350px] 
+                  md:h-[400px]
+                  ${isMiddle ? "lg:h-[480px]" : "lg:h-[400px]"}
+                  overflow-hidden rounded-4xl relative
+                `}
               >
                 <img
                   src={hotel.img}
@@ -48,7 +69,7 @@ export const PopularHotels = () => {
                     Reservar ahora
                   </Link>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>

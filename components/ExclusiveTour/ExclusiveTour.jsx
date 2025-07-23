@@ -1,4 +1,31 @@
+"use client";
+import { motion } from "framer-motion";
 import { Container, Title } from "../ui";
+
+const imageVariants = {
+  hidden: { opacity: 0, x: -100 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+    },
+  },
+};
+
+const textVariants = {
+  hidden: { opacity: 0, x: 100 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+      delay: 0.2,
+    },
+  },
+};
 
 export const ExclusiveTour = () => {
   return (
@@ -9,12 +36,23 @@ export const ExclusiveTour = () => {
         className="text-center mb-10"
       />
 
-      <div className="grid grid-cols-12 gap-5 max-w-5xl mx-auto items-center">
-        <div className="col-span-12 md:col-span-6">
+      <motion.div
+        className="grid grid-cols-12 gap-5 max-w-5xl mx-auto items-center"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+      >
+        <motion.div
+          className="col-span-12 md:col-span-6"
+          variants={imageVariants}
+        >
           <img src="/tour.webp" className="object-cover" />
-        </div>
+        </motion.div>
 
-        <div className="col-span-12 md:col-span-6">
+        <motion.div
+          className="col-span-12 md:col-span-6"
+          variants={textVariants}
+        >
           <p className="mb-3">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -30,8 +68,8 @@ export const ExclusiveTour = () => {
             <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
             <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
           </ul>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </Container>
   );
 };

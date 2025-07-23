@@ -4,16 +4,16 @@ export const footerLinks = [
     title: "Sección 1",
     links: [
       { label: "Inicio", href: "/" },
-      { label: "Nosotros", href: "/nosotros" },
-      { label: "Hoteles populares", href: "/hoteles" },
+      { label: "Nosotros", href: "#about" },
+      { label: "Hoteles populares", href: "#popular-hotels" },
     ],
   },
   {
     id: 2,
     title: "Sección 2",
     links: [
-      { label: "Reseñas", href: "/resenas" },
-      { label: "Contacto", href: "/contacto" },
+      { label: "Reseñas", href: "#reviews" },
+      { label: "Contacto", href: "" },
     ],
   },
 ];

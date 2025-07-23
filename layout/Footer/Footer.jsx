@@ -7,7 +7,9 @@ export const Footer = () => {
     <footer className="bg-white py-10 px-5 md:px-0">
       <div className="container mx-auto grid grid-cols-12 gap-5 md:gap-0">
         <div className="col-span-12 md:col-span-3 flex items-center">
-          <span className="text-xl font-bold uppercase">Logo</span>
+          <Link href="/" className="text-xl font-bold uppercase">
+            Logo
+          </Link>
         </div>
 
         <div className="col-span-12 md:col-span-7">

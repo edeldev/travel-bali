@@ -11,11 +11,12 @@ export const Header = () => {
   const [open, setOpen] = useState(false);
   const { scrollY } = useScroll();
   const opacity = useTransform(scrollY, [0, 100], [1, 0]);
+  const zIndex = useTransform(scrollY, [0, 100], [10, -10]);
 
   return (
     <motion.header className="fixed w-full top-0 z-20">
       <div className="py-5 xl:py-0 px-5 xl:px-20 flex justify-between items-center">
-        <motion.div className="flex-1" style={{ opacity }}>
+        <motion.div className="flex-1" style={{ opacity, zIndex }}>
           <Link href="/" className="text-white font-bold text-3xl">
             Logo
           </Link>
@@ -46,7 +47,7 @@ export const Header = () => {
 
         <motion.div
           className="flex-1 hidden xl:flex justify-end"
-          style={{ opacity }}
+          style={{ opacity, zIndex }}
         >
           <div className="flex items-center bg-white rounded-full pr-1 group cursor-pointer">
             <motion.div className="px-5 py-3 bg-primary hover:bg-primary/90 transition duration-300 rounded-full border border-white">
