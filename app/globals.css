@@ -12,6 +12,11 @@
   --font-bali: var(--font-bali);
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 html {
   scroll-behavior: smooth;
 }
